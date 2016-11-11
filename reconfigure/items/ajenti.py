@@ -52,6 +52,7 @@ UserData.bind_name('name')
 UserData.bind_property('email', 'email')
 UserData.bind_property('password', 'password')
 UserData.bind_property('permissions', 'permissions')
+UserData.bind_property('otp_config', 'otp_config', getter=json.loads, setter=json.dumps)
 UserData.bind_collection('configs', lambda x: x.get('configs'), item_class=ConfigData, collection_class=BoundDictionary, key=lambda x: x.name)
 
 ConfigData.bind_attribute('value', 'data', getter=json.loads, setter=json.dumps)
